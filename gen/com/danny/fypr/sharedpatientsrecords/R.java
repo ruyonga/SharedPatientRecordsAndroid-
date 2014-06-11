@@ -1082,9 +1082,8 @@ containing a value of this type.
         public static final int white=0x7f020059;
     }
     public static final class id {
-        public static final int Gotosignup=0x7f050040;
-        public static final int P_id=0x7f050044;
-        public static final int P_pass=0x7f050045;
+        public static final int P_id=0x7f050045;
+        public static final int P_pass=0x7f050046;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1128,7 +1127,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
-        public static final int reg=0x7f050046;
+        public static final int reg=0x7f050047;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1143,7 +1142,8 @@ containing a value of this type.
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
-        public static final int signup=0x7f050047;
+        public static final int signinlink=0x7f050044;
+        public static final int signuplink=0x7f050040;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;

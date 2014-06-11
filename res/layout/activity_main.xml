@@ -42,7 +42,7 @@
 		<requestFocus />
 	</EditText>
 	<TextView
-		android:id="@+id/Gotosignup"
+		android:id="@+id/signuplink"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
