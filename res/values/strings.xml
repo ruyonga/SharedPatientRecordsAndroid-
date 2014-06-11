@@ -3,4 +3,6 @@
 	<string name="app_name">ISPR</string>
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
+	<drawable name="black">#000000</drawable>
+	<drawable name="white">#FFFFFF</drawable>
 </resources>

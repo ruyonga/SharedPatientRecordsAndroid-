@@ -19,5 +19,13 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity 
+			android:name="com.danny.fypr.sharedpatientsrecords.Records"
+			android:label="Records"
+			></activity>
+		<activity 
+			android:name="com.danny.fypr.sharedpatientsrecords.CreateAcc"
+			android:label="Create Account"
+			></activity>
 	</application>
 </manifest>

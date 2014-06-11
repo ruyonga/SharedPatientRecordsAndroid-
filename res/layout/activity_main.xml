@@ -1,7 +1,79 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/container"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="#000000"
 	tools:context="com.danny.fypr.sharedpatientsrecords.MainActivity"
-	tools:ignore="MergeRootFrame" />
+	tools:ignore="MergeRootFrame" >
+	<TextView
+		android:id="@+id/textView1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_marginLeft="41dp"
+		android:layout_marginTop="25dp"
+		android:text="Patient Record System"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:textColor="@drawable/white"
+		android:typeface="serif" />
+	<TextView
+		android:id="@+id/textView2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/textView1"
+		android:layout_below="@+id/textView1"
+		android:layout_marginTop="28dp"
+		android:text="Login Form"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textColor="@drawable/white"
+		android:typeface="serif" />
+	<EditText
+		android:id="@+id/username"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/textView2"
+		android:layout_centerHorizontal="true"
+		android:ems="10"
+		android:hint="Patient Id"
+		android:textColor="@drawable/white"
+		android:typeface="serif" >
+		<requestFocus />
+	</EditText>
+	<TextView
+		android:id="@+id/Gotosignup"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/login"
+		android:layout_marginLeft="15dp"
+		android:layout_marginTop="52dp"
+		android:text="create account"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textColor="#0101DF"
+		android:typeface="serif" />
+	<EditText
+		android:id="@+id/password"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/textView2"
+		android:layout_alignRight="@+id/textView1"
+		android:layout_below="@+id/username"
+		android:layout_marginTop="34dp"
+		android:ems="10"
+		android:hint="password"
+		android:inputType="textPassword"
+		android:textColor="@drawable/white"
+		android:typeface="serif" />
+	<Button
+		android:id="@+id/login"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/password"
+		android:layout_alignRight="@+id/username"
+		android:layout_below="@+id/password"
+		android:layout_marginTop="38dp"
+		android:text="Login"
+		android:typeface="serif" />
+</RelativeLayout>

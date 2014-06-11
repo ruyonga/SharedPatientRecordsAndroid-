@@ -1,27 +1,53 @@
 package com.danny.fypr.sharedpatientsrecords;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.danny.fypr.sharedpatientsrecords.auth.DatabaseHandler;
 
 public class MainActivity extends ActionBarActivity {
+	EditText password, patientid;
+	Button login;
+	TextView createAcc;
+	DatabaseHandler db = new DatabaseHandler(this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		password = (EditText) findViewById(R.id.password);
+		patientid = (EditText) findViewById(R.id.username);
+		createAcc = (TextView) findViewById(R.id.signup);
+		login = (Button) findViewById(R.id.login);
+		createAcc.setOnClickListener(new OnClickListener() {
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				Intent goToSignup = new Intent(MainActivity.this, CreateAcc.class);
+				startActivity(goToSignup);
+			}
+		});
+		login.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				Toast.makeText(getApplicationContext(), "Coming up", Toast.LENGTH_LONG).show();
+			}
+		});
+
 	}
 
 	@Override
@@ -42,23 +68,6 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
-			return rootView;
-		}
 	}
 
 }
