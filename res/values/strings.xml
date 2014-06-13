@@ -5,4 +5,7 @@
 	<string name="action_settings">Settings</string>
 	<drawable name="black">#000000</drawable>
 	<drawable name="white">#FFFFFF</drawable>
+	<drawable name="textColor">#18bc9c</drawable>
+	<drawable name="buttonColot">#1e2a36</drawable>
+	<drawable name="link_color">#0101DF</drawable>
 </resources>

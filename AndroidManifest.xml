@@ -27,5 +27,9 @@
 			android:name="com.danny.fypr.sharedpatientsrecords.CreateAcc"
 			android:label="Create Account"
 			></activity>
+		<activity 
+			android:name="com.danny.fypr.sharedpatientsrecords.Settings"
+			android:label="Settings"
+			></activity>
 	</application>
 </manifest>
