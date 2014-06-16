@@ -31,5 +31,9 @@
 			android:name="com.danny.fypr.sharedpatientsrecords.Settings"
 			android:label="Settings"
 			></activity>
+		<activity 
+			android:name="com.danny.fypr.sharedpatientsrecords.ChangePassword"
+			android:label="Change Password"
+			></activity>
 	</application>
 </manifest>

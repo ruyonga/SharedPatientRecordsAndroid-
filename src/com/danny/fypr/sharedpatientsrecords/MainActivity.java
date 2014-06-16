@@ -17,10 +17,10 @@ import android.widget.Toast;
 
 import com.danny.fypr.sharedpatientsrecords.auth.DatabaseHandler;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 	EditText password, patientid;
 	Button login;
-	TextView createAcc;
+	TextView createAcc,pswd;
 	DatabaseHandler db = new DatabaseHandler(this);
 
 	@Override
@@ -33,63 +33,11 @@ public class MainActivity extends ActionBarActivity {
 		password = (EditText) findViewById(R.id.password);
 		patientid = (EditText) findViewById(R.id.username);
 		createAcc = (TextView) findViewById(R.id.signuplink);
+		pswd = (TextView) findViewById(R.id.pswdchage);
 		login = (Button) findViewById(R.id.loginbtn);
-		createAcc.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
-				Intent goToSignup = new Intent(MainActivity.this,
-						CreateAcc.class);
-				startActivity(goToSignup);
-			}
-		});
-		login.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				String id = patientid.getText().toString();
-				String pass = password.getText().toString();
-				setProgressBarIndeterminateVisibility(true);
-				
-
-				if ((id != "") && (pass != "")) {
-					Log.d("Reading: ", "Reading all contacts..");
-					try {
-						
-						if(db.selectUser(id, pass) != null){
-
-							Toast.makeText(getApplicationContext(),
-									"Successful login", Toast.LENGTH_LONG)
-									.show();
-							setProgressBarIndeterminateVisibility(false);
-							Intent securedpage = new Intent(
-									MainActivity.this, Records.class);
-							startActivity(securedpage);
-							
-						}else{
-							Toast.makeText(getApplicationContext(),
-									"Wrong Username or Password", Toast.LENGTH_LONG)
-									.show();
-							setProgressBarIndeterminateVisibility(false);
-						}
-						}
-				    catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-						setProgressBarIndeterminateVisibility(false);
-					}
-				
-			}
-				else{
-					patientid.requestFocus();
-					patientid.setBackgroundColor(Color.RED);
-				
-					Toast.makeText(getApplicationContext(), "Patient id and password missin", Toast.LENGTH_LONG).show();
-				}}
-		});
+		createAcc.setOnClickListener(this);
+		pswd.setOnClickListener(this);
+		login.setOnClickListener(this);
 
 	}
 
@@ -112,6 +60,65 @@ public class MainActivity extends ActionBarActivity {
 		startActivity(toSettings);
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v.getId() == R.id.pswdchage){
+			Intent pswdchange = new Intent(MainActivity.this,
+					ChangePassword.class);
+			startActivity(pswdchange);
+		}
+		else if(v.getId() == R.id.loginbtn){
+			String id = patientid.getText().toString();
+			String pass = password.getText().toString();
+			setProgressBarIndeterminateVisibility(true);
+			
+
+			if ((id != "") && (pass != "")) {
+				Log.d("Reading: ", "Reading all contacts..");
+				try {
+					
+					if(db.selectUser(id, pass) != null){
+
+						Toast.makeText(getApplicationContext(),
+								"Successful login", Toast.LENGTH_LONG)
+								.show();
+						setProgressBarIndeterminateVisibility(false);
+						Intent securedpage = new Intent(
+								MainActivity.this, Records.class);
+						Bundle bundle =  new Bundle();
+						bundle.putString("patId", id);
+						securedpage.putExtras(bundle);
+						startActivity(securedpage);
+						
+					}else{
+						Toast.makeText(getApplicationContext(),
+								"Wrong Username or Password", Toast.LENGTH_LONG)
+								.show();
+						setProgressBarIndeterminateVisibility(false);
+					}
+					}
+			    catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					setProgressBarIndeterminateVisibility(false);
+				}
+			
+		}
+			else{
+				patientid.requestFocus();
+				patientid.setBackgroundColor(Color.RED);
+			
+				Toast.makeText(getApplicationContext(), "Patient id and password missin", Toast.LENGTH_LONG).show();
+			}
+		}
+		else if(v.getId() == R.id.signuplink){
+			Intent goToSignup = new Intent(MainActivity.this,
+					CreateAcc.class);
+			startActivity(goToSignup);
+		}
 	}
 
 }
