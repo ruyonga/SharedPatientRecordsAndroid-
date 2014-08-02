@@ -12,8 +12,9 @@ displayed in a listview.
 - Json
 - DJango
 - listviews
-- 
-***How to****
+
+***How to***
+
 Download the Zip and extract
 Import the folder to your eclipse
 Change the two urls 
