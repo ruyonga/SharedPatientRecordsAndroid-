@@ -8,4 +8,6 @@
 	<drawable name="textColor">#18bc9c</drawable>
 	<drawable name="buttonColot">#1e2a36</drawable>
 	<drawable name="link_color">#0101DF</drawable>
+	<string name="mobile_patient_record_">"Mobile Patient Record "</string>
+	<drawable name="grey">#ECF0F1</drawable>
 </resources>
